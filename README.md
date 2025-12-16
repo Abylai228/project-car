@@ -1,7 +1,7 @@
 Project Title and Description
  Arduino Bluetooth-Controlled Car
 
-This project is a Bluetooth-operated robotic vehicle built using an Arduino microcontroller, an HC-05 Bluetooth module, and an L298N motor driver. The car receives commands from a smartphone over Bluetooth and performs movements such as forward, backward, left, right, and stop.
+This project is a Bluetooth-operated robotic vehicle built using an Arduino microcontroller, an HC-06 Bluetooth module, and an L298N motor driver. The car receives commands from a smartphone over Bluetooth and performs movements such as forward, backward, left, right, forward-right, forward-left and stop.
 The project demonstrates basic robotics, embedded programming, and wireless communication principles while maintaining a clear and organized documentation structure.
 
 Clear Instructions for Setup, Usage, and Replication
@@ -10,7 +10,7 @@ Clear Instructions for Setup, Usage, and Replication
 
 Arduino Uno or Nano
 
-HC-05 Bluetooth module
+HC-06 Bluetooth module
 
 L298N motor driver
 
@@ -52,13 +52,13 @@ Load the provided bluetooth_car.ino file.
 
 Select your board and COM port.
 
-Disconnect HC-05 TX/RX before uploading to avoid serial interference.
+Disconnect HC-06 TX/RX before uploading to avoid serial interference.
 
-Upload the code, then reconnect the HC-05.
+Upload the code, then reconnect the HC-06.
 
 📱 Usage Instructions
 
-Pair your phone with HC-05 (default password: 1234).
+Pair your phone with HC-06 (default password: 1234).
 
 Open any Bluetooth terminal/control app.
 
@@ -69,6 +69,8 @@ F	Move Forward
 B	Move Backward
 L	Turn Left
 R	Turn Right
+G Move forward and turn left.
+I Move forward and turn right.
 S	Stop
 Replication Instructions
 
