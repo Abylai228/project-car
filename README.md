@@ -24,15 +24,15 @@ Jumper wires
 
 2. Wiring Overview
 
-HC-05 → Arduino
+HC-06 → Arduino
 
 VCC → 5V
 
 GND → GND
 
-TX → Arduino RX
+TX → Pin 3
 
-RX → Arduino TX
+RX → Pin 2
 
 L298N → Arduino + Motors
 
