@@ -8,45 +8,69 @@ void setup() {
   Serial.begin(9600);
   mySerial.begin(9600);
 
-  pinMode(13,OUTPUT);
-  pinMode(12,OUTPUT);
-  pinMode(11,OUTPUT);
-  pinMode(10,OUTPUT);
+  pinMode(13, OUTPUT);  // Set pin 13 as output
+  pinMode(12, OUTPUT);  // Set pin 12 as output
+  pinMode(11, OUTPUT);  // Set pin 11 as output
+  pinMode(10, OUTPUT);  // Set pin 10 as output
 }
 
 void loop() {
   if (mySerial.available()) {
     command = mySerial.read();
 
-    if (command == 'F') {
-      digitalWrite(13,HIGH);
-      digitalWrite(12,LOW);
-      digitalWrite(11,HIGH);
-      digitalWrite(10,LOW);
+    if (command == 'F') {  // Move forward
+      digitalWrite(13, HIGH);
+      digitalWrite(12, LOW);
+      digitalWrite(11, HIGH);
+      digitalWrite(10, LOW);
     }
-    else if (command == 'B') {
-      digitalWrite(13,LOW);
-      digitalWrite(12,HIGH);
-      digitalWrite(11,LOW);
-      digitalWrite(10,HIGH);
+    else if (command == 'B') {  // Move backward
+      digitalWrite(13, LOW);
+      digitalWrite(12, HIGH);
+      digitalWrite(11, LOW);
+      digitalWrite(10, HIGH);
     }
-    else if (command == 'L') {
-      digitalWrite(13,LOW);
-      digitalWrite(12,LOW);
-      digitalWrite(11,HIGH);
-      digitalWrite(10,LOW);
+    else if (command == 'L') {  // Turn left
+      digitalWrite(13, LOW);
+      digitalWrite(12, LOW);
+      digitalWrite(11, HIGH);
+      digitalWrite(10, LOW);
     }
-    else if (command == 'R') {
-      digitalWrite(13,HIGH);
-      digitalWrite(12,LOW);
-      digitalWrite(11,LOW);
-      digitalWrite(10,LOW);
+    else if (command == 'R') {  // Turn right
+      digitalWrite(13, HIGH);
+      digitalWrite(12, LOW);
+      digitalWrite(11, LOW);
+      digitalWrite(10, LOW);
     }
-    else if (command == 'S') {
-      digitalWrite(13,LOW);
-      digitalWrite(12,LOW);
-      digitalWrite(11,LOW);
-      digitalWrite(10,LOW);
+    else if (command == 'G') {  // Move forward and turn left
+      digitalWrite(13, LOW);  // Left motor forward
+      digitalWrite(12, LOW);  // Right motor off
+      digitalWrite(11, HIGH); // Right motor forward
+      digitalWrite(10, LOW);  // Left motor forward
+    }
+    else if (command == 'I') {  // Move backward and turn left
+      digitalWrite(13, LOW);  // Left motor backward
+      digitalWrite(12, HIGH); // Right motor forward
+      digitalWrite(11, LOW);  // Right motor backward
+      digitalWrite(10, HIGH); // Left motor backward
+    }
+    else if (command == 'H') {  // Move forward and turn right
+      digitalWrite(13, HIGH); // Left motor forward
+      digitalWrite(12, LOW);  // Right motor off
+      digitalWrite(11, LOW);  // Right motor forward
+      digitalWrite(10, LOW);  // Left motor forward
+    }
+    else if (command == 'J') {  // Move backward and turn right
+      digitalWrite(13, HIGH); // Left motor backward
+      digitalWrite(12, HIGH); // Right motor forward
+      digitalWrite(11, LOW);  // Right motor backward
+      digitalWrite(10, HIGH); // Left motor backward
+    }
+    else if (command == 'S') {  // Stop
+      digitalWrite(13, LOW);
+      digitalWrite(12, LOW);
+      digitalWrite(11, LOW);
+      digitalWrite(10, LOW);
     }
   }
 }
